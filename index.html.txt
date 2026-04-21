@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semangatt Aigaa Novariaa 💞</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 400px;
+    animation: fadeIn 1.5s ease;
+}
+
+h1 { color: #ff4d6d; }
+
+p { font-size: 18px; }
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover { background: #e63950; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* animasi hati */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: jatuh 5s linear infinite;
+}
+
+@keyframes jatuh {
+    0% { transform: translateY(-10vh); opacity:1; }
+    100% { transform: translateY(100vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Semangatt Aigaa Novariaa 💞</h1>
+    <p id="pesan">Semangatt ya aigaa novariaa, sayangg pasti bisa! idann selalu ada buat sayangg 💞</p>
+
+    <button onclick="gantiPesan()">Klik kalau lagi butuh semangat</button>
+</div>
+
+<script>
+const pesanList = [
+"Semangatt ya aigaa novariaa 💪💞",
+"idann bangga sama sayangg 🥰",
+"sayangg hebat ❤️",
+"Sedikit lagi pasti bisa 🔥",
+"idann selalu dukung sayangg 💞"
+];
+
+function gantiPesan() {
+    const random = Math.floor(Math.random() * pesanList.length);
+    document.getElementById("pesan").innerText = pesanList[random];
+}
+
+/* efek hati */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "💝";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}, 500);
+</script>
+
+</body>
+</html>
